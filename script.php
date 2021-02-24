@@ -1,6 +1,8 @@
 <?php
 $testo = "questo è il mio testo";
-//$badword = $_GET[word];
+$badword = $_GET["word"];
+$rimpiazza = str_replace($badword , '***', $testo);
+var_dump($testo)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +14,8 @@ $testo = "questo è il mio testo";
 </head>
 <body>
     <h1><?php echo $testo?></h1>
-    <h2>Lunghezza : <?php echo strlen($testo)?></h2>
-    <h3><em>Risultato : </em>"<?php echo ucfirst(str_replace('mio' , '***', $testo))?>" dopo str_replace</h3>
+    <h2>Lunghezza : <?php echo strlen($testo);?></h2>
+    <h3><?php echo ucfirst($rimpiazza); ?></h3>
+    <?php var_dump($badword);?>
 </body>
 </html>
